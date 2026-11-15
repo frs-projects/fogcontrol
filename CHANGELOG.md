@@ -13,6 +13,8 @@ versions are the `mod.version` released with `framework/bump.sh` / `framework/bu
 - Moved to the FRS mod framework (Stonecutter node `1.20.1-forge`). The Java package is now
   `net.frsprojects.fogcontrol`; the mod id stays `fogcontrol`, so configs and servers keep working.
 - The Distant Horizons API comes from Modrinth's Maven instead of a jar in `libs/`.
+- Fog curve math, color parsing and transition blending live in a pure-Java `:core` module with
+  JUnit tests.
 - Custom fog and sky colors no longer change with rain or thunder, so they stay matched in any
   weather. They still follow day and night, and lightning still flashes the sky.
 

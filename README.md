@@ -1,19 +1,28 @@
 # Fog Control (Forge 1.20.1)
 
+| Side | Status | Notes |
+| --- | --- | --- |
+| **Server** | Required | Holds the settings, runs `/fogcontrol` and syncs it to players. |
+| **Client** | Optional | Needed to see the custom fog. Clients without it can join and see vanilla fog; with it they can join any server. |
+| **Singleplayer** | Supported |  |
+
 Server-controlled terrain fog. Ops change it with a command, and it syncs to every player.
 Fog goes from a **minimum** amount at the camera to a **maximum** amount exactly at the render-distance edge.
 
 ## Build
-Part of the FRS mod framework (`framework/` submodule, Stonecutter node `1.20.1-forge`). Clone with
-`git clone --recurse-submodules`, or run `git submodule update --init` after cloning.
-```
-./gradlew build          (Windows: gradlew.bat build)
-```
-Output: `versions/1.20.1-forge/build/libs/fogcontrol-<version>+1.20.1-forge.jar`. Needs a local JDK 25 for
-Gradle (the mod itself is compiled for Java 17). Releases: `framework/bump.bat` (Windows) or `framework/bump.sh`.
+Built with the FRS mod framework (`framework/` submodule) and Stonecutter; one node, `1.20.1-forge`
+(Forge 1.20.1-47.4.28). Clone with `--recurse-submodules` (or run `git submodule update --init`).
+Gradle needs a local JDK 25 to run; the mod itself is compiled for Java 17.
 
-Install the jar on the **server** (for control) and on **clients** (to see the effect).
-Clients without it can still join and see vanilla fog.
+    ./gradlew checkAll     (Windows PowerShell: .\gradlew checkAll)
+
+`core/` (`net.frsprojects.fogcontrol.core`) is plain Java with JUnit tests: the fog curve math
+(`FogMath`), color parsing (`FogColor`) and transition blending (`FogState`). `checkAll` runs its
+tests and builds the mod; the mod jar contains it.
+
+Output: `versions/1.20.1-forge/build/libs/` (also copied to `build/libs/`). Mod info lives in
+`gradle.properties` (`mod.*`). Releases: `framework/bump.sh` / `framework\bump.bat`, which tags
+`vX.Y.Z`; the tag build publishes a GitHub Release.
 
 ## Commands
 | Command | Who | Effect |
