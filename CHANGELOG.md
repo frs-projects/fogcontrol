@@ -21,6 +21,10 @@ versions are the `mod.version` released with `framework/bump.sh` / `framework/bu
   (priority 900) ended the method before ours ran; ours now runs first (priority 800).
 - **Dynamic Surroundings tinted the custom fog color** toward grey-white during its weather sky
   events. The custom color is now sent to the shaders again after it.
+- **Transitions stalled and ran long after a command.** Every config file write makes Forge reload
+  the config, and every reload re-sent the settings, so one command sent them up to four times and
+  each copy restarted the fade. Clients now ignore settings they already have.
+- `customColor` / `skyColor` in the config accepted a sign (`#+12345`); colors must be six hex digits.
 
 ## [1.1.0]
 

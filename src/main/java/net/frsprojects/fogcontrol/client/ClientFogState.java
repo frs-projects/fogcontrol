@@ -54,6 +54,10 @@ public final class ClientFogState {
     }
 
     public static void set(FogSettings settings) {
+        // The server re-sends unchanged settings: Forge reloads the config after each of its own file
+        // writes, and every reload broadcasts. Restarting the transition for those would stall it.
+        if (settings.equals(current)) return;
+
         FogState newTarget = FogState.of(settings.minPercent(), settings.maxPercent(),
                 settings.customColorEnabled(), settings.customColor(),
                 settings.skyColorEnabled(), settings.skyColor());
