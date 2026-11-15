@@ -21,6 +21,4 @@ jobs:
       title: Fog Control
       # Must list exactly the nodes registered in settings.gradle.kts.
       nodes: '["1.20.1-forge"]'
-      # No :core module in this mod.
-      core: false
     secrets: inherit

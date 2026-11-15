@@ -2,7 +2,7 @@ package net.frsprojects.fogcontrol.compat;
 
 import net.frsprojects.fogcontrol.FogControl;
 import net.frsprojects.fogcontrol.client.ClientFogState;
-import net.frsprojects.fogcontrol.client.FogState;
+import net.frsprojects.fogcontrol.core.FogState;
 import com.seibel.distanthorizons.api.DhApi;
 import com.seibel.distanthorizons.api.interfaces.config.IDhApiConfig;
 import com.seibel.distanthorizons.api.interfaces.config.IDhApiConfigValue;

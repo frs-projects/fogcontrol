@@ -1,8 +1,8 @@
 package net.frsprojects.fogcontrol.mixin;
 
-import net.frsprojects.fogcontrol.FogMath;
 import net.frsprojects.fogcontrol.client.ClientFogState;
-import net.frsprojects.fogcontrol.client.FogState;
+import net.frsprojects.fogcontrol.core.FogMath;
+import net.frsprojects.fogcontrol.core.FogState;
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.Camera;
 import net.minecraft.client.renderer.DimensionSpecialEffects;

@@ -1,7 +1,7 @@
 package net.frsprojects.fogcontrol.config;
 
-import net.frsprojects.fogcontrol.FogColor;
 import net.frsprojects.fogcontrol.FogSettings;
+import net.frsprojects.fogcontrol.core.FogColor;
 import net.minecraftforge.common.ForgeConfigSpec;
 
 public final class FogConfig {

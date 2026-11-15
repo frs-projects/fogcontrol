@@ -1,8 +1,8 @@
 package net.frsprojects.fogcontrol.command;
 
-import net.frsprojects.fogcontrol.FogColor;
 import net.frsprojects.fogcontrol.FogSettings;
 import net.frsprojects.fogcontrol.config.FogConfig;
+import net.frsprojects.fogcontrol.core.FogColor;
 import net.frsprojects.fogcontrol.network.FogNetwork;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.DoubleArgumentType;

@@ -20,7 +20,9 @@ plugins {
 
 rootProject.name = "fogcontrol"
 
-// No :core module (yet). FogMath and FogColor are Minecraft-free and could move there with tests.
+// Pure-Java engine: no Minecraft, no mappings, no preprocessing. Deliberately
+// outside the Stonecutter tree so it is compiled and tested exactly once.
+include("core")
 
 stonecutter {
     create(rootProject) {

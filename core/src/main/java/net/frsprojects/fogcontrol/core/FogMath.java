@@ -1,4 +1,4 @@
-package net.frsprojects.fogcontrol;
+package net.frsprojects.fogcontrol.core;
 
 /**
  * Converts min/max fog amounts into the fog start/end distances the shaders use.

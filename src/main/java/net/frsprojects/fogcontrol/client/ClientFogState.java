@@ -1,6 +1,7 @@
 package net.frsprojects.fogcontrol.client;
 
 import net.frsprojects.fogcontrol.FogSettings;
+import net.frsprojects.fogcontrol.core.FogState;
 
 /**
  * Client-side state.
@@ -53,7 +54,9 @@ public final class ClientFogState {
     }
 
     public static void set(FogSettings settings) {
-        FogState newTarget = FogState.of(settings);
+        FogState newTarget = FogState.of(settings.minPercent(), settings.maxPercent(),
+                settings.customColorEnabled(), settings.customColor(),
+                settings.skyColorEnabled(), settings.skyColor());
         FogState now = effective();
 
         if (now == null || settings.transitionTicks() <= 0) {

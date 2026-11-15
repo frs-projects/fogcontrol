@@ -1,7 +1,7 @@
 package net.frsprojects.fogcontrol.mixin;
 
 import net.frsprojects.fogcontrol.client.ClientFogState;
-import net.frsprojects.fogcontrol.client.FogState;
+import net.frsprojects.fogcontrol.core.FogState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.util.Mth;

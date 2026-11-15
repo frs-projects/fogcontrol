@@ -1,7 +1,4 @@
-package net.frsprojects.fogcontrol.client;
-
-import net.frsprojects.fogcontrol.FogColor;
-import net.frsprojects.fogcontrol.FogSettings;
+package net.frsprojects.fogcontrol.core;
 
 /**
  * The fog/sky values actually shown on screen. During a transition this is a blend between
@@ -14,12 +11,13 @@ public record FogState(float minPercent, float maxPercent,
                        float fogColorWeight, float fogR, float fogG, float fogB,
                        float skyColorWeight, float skyR, float skyG, float skyB) {
 
-    public static FogState of(FogSettings s) {
-        int fog = s.customColor();
-        int sky = s.skyColor();
-        return new FogState(s.minPercent(), s.maxPercent(),
-                s.customColorEnabled() ? 1.0F : 0.0F, FogColor.red(fog), FogColor.green(fog), FogColor.blue(fog),
-                s.skyColorEnabled() ? 1.0F : 0.0F, FogColor.red(sky), FogColor.green(sky), FogColor.blue(sky));
+    /** The state that fully shows the given settings (custom colors at weight 1 when enabled). */
+    public static FogState of(float minPercent, float maxPercent,
+                              boolean fogColorEnabled, int fogColor,
+                              boolean skyColorEnabled, int skyColor) {
+        return new FogState(minPercent, maxPercent,
+                fogColorEnabled ? 1.0F : 0.0F, FogColor.red(fogColor), FogColor.green(fogColor), FogColor.blue(fogColor),
+                skyColorEnabled ? 1.0F : 0.0F, FogColor.red(skyColor), FogColor.green(skyColor), FogColor.blue(skyColor));
     }
 
     /**
